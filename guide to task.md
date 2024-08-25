@@ -118,6 +118,14 @@ $ echo "SHOW DATABASES;" | mysql -uhbnb_test -p | grep hbnb_test_db
 $ pip install flask
 $ pip install Flask-CORS
 $ pip install SQLAlchemy
+$ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+$ sudo apt-get update
+$ sudo apt-get install pkg-config
+
+$ pip3 install mysqlclient
+$ python3 -c "import MySQLdb" # if no output or error installation succeful
+
+
 
 # task 1 : Never fail!
 $ python3 -m unittest discover tests 2>&1 | tail -1
