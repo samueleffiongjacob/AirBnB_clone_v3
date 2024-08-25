@@ -11,7 +11,6 @@
 [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/)
 [“404 page”, a “Not found”… 34 brilliantly designed 404 error pages](https://www.creativebloq.com/web-design/best-404-pages-812505)
 
-
 ## REST API
 
 REST API is a software architectural style for Backend.
@@ -133,6 +132,7 @@ $ cat test_get_count.py
 $ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./test_get_count.py 
 $ ./test_get_count.py 
 
+# task 3
 # Status of your API
 $ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db HBNB_API_HOST=0.0.0.0 HBNB_API_PORT=5000 python3 -m api.v1.app
 
@@ -148,4 +148,23 @@ $ curl -X GET http://0.0.0.0:5000/api/v1/stats
 # In api/v1/app.py, create a handler for 404 errors that returns a JSON-formatted 404 status code response. The content should be: "error": "Not found"
 $ curl -X GET http://0.0.0.0:5000/api/v1/nop
 $ curl -X GET http://0.0.0.0:5000/api/v1/nop -vvv
+
+# task 6: state
+# make sure dev server is still running
+$ curl -X GET http://0.0.0.0:5000/api/v1/states/
+$ curl -X GET http://0.0.0.0:5000/api/v1/states/fd53942e-d693-4a4b-a363-9a50a1c3ae2c
+$ curl -X POST http://0.0.0.0:5000/api/v1/states/ -H "Content-Type: application/json" -d '{"name": "California"}' -vvv
+$  curl -X PUT http://0.0.0.0:5000/api/v1/states/d137e404-8561-413d-891b-a0004061e600 -H "Content-Type: application/json" -d '{"name": "California is so cool"}'
+$ curl -X GET http://0.0.0.0:5000/api/v1/states/d137e404-8561-413d-891b-a0004061e600
+$ curl -X DELETE http://0.0.0.0:5000/api/v1/states/c761225b-7214-48b7-91bf-33f89168c9ce
+$ curl -X GET http://0.0.0.0:5000/api/v1/states/c761225b-7214-48b7-91bf-33f89168c9ce
+
+# task : 7. City
+# just repeat the steps below
+
+# 8. Amenity
+# do above for amenty
+
+# 9. User
+# just reapet for the others
 ```
