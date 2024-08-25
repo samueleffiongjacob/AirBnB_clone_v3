@@ -107,7 +107,7 @@ $ sudo mysql
 
 # run query
 $ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -
-$ echo "SHOW DATABASES;" | mysql -uhbnb_dev -p | grep hbnb_dev_db  # password: hbnb_dev_pwd
+$ echo "SHOW DATABASES;" | mysql -uhbnb_dev -p | grep hbnb_dev_db  # password: 
 $ cat setup_mysql_test.sql | mysql -hlocalhost -uroot -p # password: hbnb_test_pwd
 $ echo "SHOW DATABASES;" | mysql -uhbnb_test -p | grep hbnb_test_db
 ```
@@ -125,6 +125,10 @@ $ python3 -m unittest discover tests 2>&1 | tail -1
 $ HBNB_ENV=test HBNB_MYSQL_USER=hbnb_test HBNB_MYSQL_PWD=hbnb_test_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db python3 -m unittest discover tests 2>&1 /dev/null | tail -n 1
 
 # task 2 :  Improve storage
+# let add dummy state 
+$ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./add_states.py
+
+# test 
 $ cat test_get_count.py
 $ HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./test_get_count.py 
 $ ./test_get_count.py 
