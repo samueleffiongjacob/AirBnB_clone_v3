@@ -78,7 +78,7 @@ class BaseModel:
         cp_dct['created_at'] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
         if hasattr(self, "_sa_instance_state"):
             del cp_dct["_sa_instance_state"]
-        if cp_dct['__class__'] is "User" and not save_to_disk:
+        if cp_dct['__class__'] == "User" and not save_to_disk:
             cp_dct.pop("_password", None)
         return (cp_dct)
 
